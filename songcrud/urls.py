@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    
+    # This leads you to the urls.py file in musicapp
     path("musicapp/", include("musicapp.urls"))
 ]

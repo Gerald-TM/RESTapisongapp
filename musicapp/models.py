@@ -6,6 +6,7 @@ class Artiste(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
 
+    # This function helps to display the first and last name of the artiste
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
@@ -15,6 +16,7 @@ class Song(models.Model):
     likes = models.IntegerField()
     artiste_id = models. ForeignKey(Artiste, on_delete=models.CASCADE)
 
+    # This function helps to display the title of the song
     def __str__(self) -> str:
         return f"{self.title}"
 
@@ -22,6 +24,8 @@ class Lyric(models.Model):
     content = models.TextField(max_length=3000)
     song_id = models.ForeignKey(Song, on_delete=models.CASCADE)
 
+    # This function helps to display the lyric content
+    
     def __str__(self) -> str:
         if len(self.content) > 50:
             return f"{self.content[0:50]}"
