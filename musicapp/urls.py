@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from .import views
 
 # These are the urls for your music app
 urlpatterns = [
